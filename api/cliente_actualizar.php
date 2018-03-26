@@ -17,7 +17,7 @@ require 'conexion.php';
 $cnx = conectar();
 
 $sql =	"UPDATE `cliente` SET `idtipodoc`='$idtipodoc',`nomclie`='$nomclie',`apeclie`='$apeclie',`dirclie`='$dirclie',`telclie`='$telclie',`email`='$email',`fechnaci`='$fechnaci',`nombarrio`='$nombarrio',`idciudad`='$nomciudad' WHERE `idcliente`=".$id;
-$result = ejecutar($sql, $cnx);
+$result = ejecutar($cnx, $sql);
 if ($result){
 	echo json_encode(array(
 		'idcliente' => $id,	

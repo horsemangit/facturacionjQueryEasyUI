@@ -34,7 +34,7 @@
 						INNER JOIN departamento ON ciudad.iddepartamento = departamento.iddepartamento
 						INNER JOIN razonsocial ON proveedor.idrazonsocial = razonsocial.idrazonsocial
 					     	     limit $offset,$rows";
-	$rs = ejecutar($cnx,$sql);	
+	$rs = ejecutar($cnx,$sql2);	
 	$items = array();
 	while($row = mysqli_fetch_object($rs)){
 		array_push($items, $row);

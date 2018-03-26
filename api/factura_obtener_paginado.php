@@ -7,7 +7,8 @@
 	require 'conexion.php';
 	$cnx = conectar();
 
-	$rs = ejecutar("select count(*) from factura",$cnx);
+	$sql = "select count(*) from factura";
+	$rs = ejecutar($cnx,$sql);
 	$row = mysqli_fetch_row($rs);
 	$result["total"] = $row[0];
 	

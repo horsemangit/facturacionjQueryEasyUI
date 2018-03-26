@@ -14,7 +14,7 @@ $nomciudad = htmlspecialchars($_REQUEST['idciudad']);
 
 
 require 'conexion.php';
-$cnx=conectar("facturacion");
+$cnx = conectar();
 
 $sql = "INSERT INTO `cliente`(`codigo`,`idtipodoc`, `nomclie`, `apeclie`, `dirclie`, `telclie`, `email`, `fechnaci`,`nombarrio`, `idciudad`) VALUES ($codigo,'$idtipodoc','$nomclie','$apeclie','$dirclie','$teleclie','$email','$fechnaci','$nombarrio','$nomciudad')";
 $result = ejecutar($cnx,$sql);

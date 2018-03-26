@@ -15,7 +15,7 @@
 	$cnx = conectar();
 
 	$sql =	"UPDATE `articulo` SET `nomarti`='$nomarti',`stock`=$stock,`valuni`='$valuni',`valven`='$valven',`idproveedor`='$idproveedor',`fechvenci`='$fechvenci',`idcategoria`='$idcategoria',`ubicacion`='$ubicacion',`observaciones`='$observaciones' WHERE `idarticulo`=".$id;
-	$result = @ejecutar($sql, $cnx);
+	$result = ejecutar($cnx,$sql);
 	if ($result):
 		echo json_encode(array(
 			'idarticulo' => $id,	

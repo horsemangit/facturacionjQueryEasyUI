@@ -6,24 +6,24 @@
   $fechafinal = $_REQUEST['fechafinal'];
 
   $sql = "SELECT 
-                  factura.numfactura
-                    , factura.vendedor
-                    , factura.fechfactura
-                    , concat(cliente.nomclie,' ', cliente.apeclie) as nomcliente
-                    , formapago.descripcion as nomformapago
-                    , SUM((detallefactura.cantarti * detallefactura.valorunidad)) as total
-                FROM 
-                    factura 
-                INNER JOIN 
-                    cliente ON factura.idclie = cliente.idcliente
-                INNER JOIN 
-                    formapago ON factura.idformapago = formapago.idformapago
-                LEFT JOIN 
-                    detallefactura ON factura.idfactura = detallefactura.idfactura
-                WHERE
-                    factura.fechfactura BETWEEN '$fechainicial' AND '$fechafinal'
-                GROUP BY
-                    factura.numfactura";
+              factura.numfactura
+                , factura.vendedor
+                , factura.fechfactura
+                , concat(cliente.nomclie,' ', cliente.apeclie) as nomcliente
+                , formapago.descripcion as nomformapago
+                , SUM((detallefactura.cantarti * detallefactura.valorunidad)) as total
+            FROM 
+                factura 
+            INNER JOIN 
+                cliente ON factura.idclie = cliente.idcliente
+            INNER JOIN 
+                formapago ON factura.idformapago = formapago.idformapago
+            LEFT JOIN 
+                detallefactura ON factura.idfactura = detallefactura.idfactura
+            WHERE
+                factura.fechfactura BETWEEN '$fechainicial' AND '$fechafinal'
+            GROUP BY
+                factura.numfactura";
   $sql = ejecutar($cnx,$sql);    
 ?>
   <!DOCTYPE html>

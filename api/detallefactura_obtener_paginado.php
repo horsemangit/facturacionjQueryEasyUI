@@ -6,7 +6,7 @@
 	$result = array();
 
 	require 'conexion.php';
-	$cnx=conectar();
+	$cnx = conectar();
 
 	$sql = "select count(*) from detallefactura where idfactura=$idfactura";
 	$rs = ejecutar($cnx, $sql);

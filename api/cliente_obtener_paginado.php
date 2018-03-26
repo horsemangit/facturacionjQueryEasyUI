@@ -5,10 +5,11 @@
 	$result = array();
 
 	require 'conexion.php';
-	$cnx=conectar("facturacion");
+	$cnx=conectar();
 
-	$rs = ejecutar("select count(*) from cliente",$cnx);
-	$row = mysql_fetch_row($rs);
+	$sql = "select count(*) from cliente";
+	$rs = ejecutar($cnx,$sql);
+	$row = mysqli_fetch_row($rs);
 	$result["total"] = $row[0];
 		
 	$rs = ejecutar("SELECT 
@@ -33,7 +34,7 @@
 		INNER JOIN departamento ON ciudad.iddepartamento = departamento.iddepartamento
 	     	     limit $offset,$rows",$cnx);	
 	$items = array();
-	while($row = mysql_fetch_object($rs)){
+	while($row = mysqli_fetch_object($rs)){
 		array_push($items, $row);
 	}
 	$result["rows"] = $items;

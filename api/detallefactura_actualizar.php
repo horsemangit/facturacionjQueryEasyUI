@@ -8,7 +8,8 @@ require 'conexion.php';
 $cnx = conectar();
 
 // Acá antes de actualizar el producto, se debe validar las cantidades del stock.
-$detalle = ejecutar($cnx,"SELECT * FROM detallefactura WHERE iddetallefactura=$id");
+$sql = "SELECT * FROM detallefactura WHERE iddetallefactura=$id";
+$detalle = ejecutar($cnx,$sql);
 if (mysqli_num_rows($detalle)<=0) {
 	echo json_encode(array('errorMsg'=>'Dentro de la factura no se encontró el articulo que desea actualizar.'));
 	return;
@@ -16,8 +17,8 @@ if (mysqli_num_rows($detalle)<=0) {
 
 $rowdetalle = mysqli_fetch_array($detalle);
 $producto = ejecutar($cnx,"SELECT * FROM articulo WHERE idarticulo='$idarticulo'");
-if (mysql_num_rows($producto)>0) {
-	$row = mysql_fetch_array($producto);
+if (mysqli_num_rows($producto)>0) {
+	$row = mysqli_fetch_array($producto);
 	// Acá validamos el stock negativo, si no cumple le retornamos un error al usuario
 	if(($row["stock"]  + $rowdetalle["cantarti"] - $cantarti) < 0){
 		echo json_encode(array('errorMsg'=>'No hay el stock suficiente para vender este articulo.'));
@@ -25,8 +26,8 @@ if (mysql_num_rows($producto)>0) {
 	}	
 }
 
-$sql =	"UPDATE detallefactura set idarticulo = $idarticulo, cantarti = $cantarti where iddetallefactura =".$id;
-$result = ejecutar($cnx, $slq);
+$sql2 =	"UPDATE detallefactura set idarticulo = $idarticulo, cantarti = $cantarti where iddetallefactura =".$id;
+$result = ejecutar($cnx, $sql2);
 if ($result):
 	echo json_encode(array(
 		'iddetallefactura' => $id,		

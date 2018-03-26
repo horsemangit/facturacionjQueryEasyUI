@@ -11,7 +11,7 @@
 	$rs = ejecutar($cnx,$sql);
 	$row = mysqli_fetch_row($rs);
 	$result["total"] = $row[0];
-	$rs = mysql_query("select * from categoria limit $offset,$rows");
+	$rs = ejecutar($cnx,"select * from categoria limit $offset,$rows");
 	
 	$items = array();
 	while($row = mysqli_fetch_object($rs)){

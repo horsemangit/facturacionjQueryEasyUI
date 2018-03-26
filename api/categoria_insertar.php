@@ -15,5 +15,5 @@
 		echo json_encode(array('errorMsg'=>'Ha ocurrido un error al intentar almacenar los datos.'));
 	endif;
 
-	cerrar($sql);
+	cerrar($cnx);
 ?>

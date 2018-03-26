@@ -7,7 +7,7 @@ require 'conexion.php';
 $cnx = conectar();
 
 $sql = "update cargo set descripcion='$descargo' where idcargo=$id";
-$result = ejecutar($sql);
+$result = ejecutar($cnx,$sql);
 if ($result){
 	echo json_encode(array(
 		'idcategoria' => $id,

@@ -9,9 +9,9 @@
 $id = intval($_REQUEST['id']);
 
 require 'api/conexion.php';
-$cnx=conectar("facturacion");
+$cnx = conectar();
 
-$rs = ejecutar("SELECT 
+$rs = ejecutar($cnx,"SELECT 
     factura.idfactura
       , factura.numfactura
       , factura.idclie
@@ -26,9 +26,9 @@ $rs = ejecutar("SELECT
   FROM factura INNER JOIN cliente ON factura.idclie = cliente.idcliente
     INNER JOIN formapago ON factura.idformapago = formapago.idformapago     
   WHERE
-    factura.idfactura = $id",$cnx);
+    factura.idfactura = $id");
 
-$row = mysql_fetch_row($rs);
+$row = mysqli_fetch_row($rs);
 if($row){
 
 echo "<!DOCTYPE html>
@@ -65,7 +65,7 @@ echo "<!DOCTYPE html>
                 <div class=address>Dir: $row[10]</div>                
             </div>";           
 
-        $rsd = ejecutar("SELECT 
+        $rsd = ejecutar($cnx,"SELECT 
       detallefactura.iddetallefactura
       , detallefactura.idfactura
       , detallefactura.idarticulo
@@ -75,7 +75,7 @@ echo "<!DOCTYPE html>
       , articulo.codigo
       , articulo.nomarti
     FROM detallefactura INNER JOIN articulo ON detallefactura.idarticulo = articulo.idarticulo 
-    WHERE idfactura=$id",$cnx);
+    WHERE idfactura=$id");
 
          echo "
              <div id='invoice'>
@@ -99,7 +99,7 @@ echo "<!DOCTYPE html>
 
       echo "<tbody>";
           $total = 0;
-  while($rowd = mysql_fetch_array($rsd)){
+  while($rowd = mysqli_fetch_array($rsd)){
     $total += $rowd[5];
     $iva=$total * 16/100;
     $totaL= $iva + $total;

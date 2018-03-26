@@ -2,9 +2,10 @@
 	require 'conexion.php';
 	$cnx=conectar("facturacion");
 	
-	$rs = ejecutar("select *, concat(cliente.nomclie,' ', cliente.apeclie) as nomcompleto from cliente",$cnx);	
+	$sql = "select *, concat(cliente.nomclie,' ', cliente.apeclie) as nomcompleto from cliente";
+	$rs = ejecutar($cnx, $sql);	
 	$items = array();
-	while($row = mysql_fetch_object($rs)){
+	while($row = mysqli_fetch_object($rs)){
 		array_push($items, $row);
 	}
 	echo json_encode($items);

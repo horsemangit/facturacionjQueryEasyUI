@@ -20,7 +20,7 @@ $result = ejecutar($cnx,$sql);
 if ($result):
 	$idproveedor = mysqli_insert_id($cnx);
 	$sql2 = "select * from  proveedor where  idproveedor= $idproveedor";
-	$rs = ejecutar($cnx,$sql);	
+	$rs = ejecutar($cnx,$sql2);	
 	$items = array();
 	while($row = mysqli_fetch_object($rs)){
 		array_push($items, $row);

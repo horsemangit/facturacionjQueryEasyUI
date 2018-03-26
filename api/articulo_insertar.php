@@ -15,10 +15,11 @@
 	$cnx = conectar();
 
 	$sql = "INSERT INTO `articulo`(`codigo`, `nomarti`, `stock`, `valuni`, `valven`, `idproveedor`, `fechvenci`, `idcategoria`,`ubicacion`, `observaciones`) VALUES ($codigo,'$nomarti','$stock','$valuni','$valven','$idproveedor','$fechvenci','$idcategoria','$ubicacion','$observaciones')";
-	$result = ejecutar($sql, $cnx);
+	$result = ejecutar($cnx, $sql);
 	if ($result):
-		$idarticulo = mysql_insert_id();
-		$rs = ejecutar("select * from  articulo where  idarticulo= $idarticulo",$cnx);	
+		$idarticulo = mysqli_insert_id($cnx);
+		$sql2 = "select * from  articulo where  idarticulo= $idarticulo";
+		$rs = ejecutar($cnx,$sql2);
 		$items = array();
 		while($row = mysqli_fetch_object($rs)){
 			array_push($items, $row);

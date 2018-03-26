@@ -2,10 +2,11 @@
 
 $id = intval($_REQUEST['id']);
 
-include 'conn.php';
+require 'conexion.php';
+$cnx = conectar();
 
 $sql = "delete from  cliente where idcliente=$id";
-$result = @mysql_query($sql);
+$result = ejecutar($sql);
 if ($result){
 	echo json_encode(array('success'=>true));
 } else {

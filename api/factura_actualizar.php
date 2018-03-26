@@ -9,7 +9,7 @@ require 'conexion.php';
 $cnx = conectar();
 
 $sql =	"UPDATE factura set idclie = $idclie, vendedor = '$vendedor', idformapago = $idformapago where idfactura =".$id;
-$result = @ejecutar($sql, $cnx);
+$result = ejecutar($cnx,$sql);
 if ($result):
 	echo json_encode(array(
 		'idfactura' => $id,		
