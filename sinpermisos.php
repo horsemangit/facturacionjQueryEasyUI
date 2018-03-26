@@ -20,14 +20,8 @@
 	<script type="text/javascript" src="scripts/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="scripts/locale/easyui-lang-es.js"></script>
 </head>
-<body class="easyui-layout">
-	<div data-options="region:'north'" style="height:50px;color:white; background-color:#2D3E50;padding:15px;text-align:right;font-size:15px;">	
-		<a href="index.php" style="color:white;margin:0px 15px; 0px 15px;"><i class="icon icon-home"></i> Inicio</a>
-		| <a href="cliente.php" style="color:white;margin:0px 15px; 0px 15px;"><i class="icon icon-users"></i> Clientes</a>
-		| <a href="factura.php" style="color:white;margin:0px 15px; 0px 15px;"><i class="icon icon-printer"></i> Facturas</a>
-		| <a href="proveedor.php" style="color:white;margin:0px 15px; 0px 15px;"><i class="icon icon-earth"></i> Proveedores</a>
-		| <a href="cerrarsesion.php" style="color:white;margin:0px 15px; 0px 15px;"><i class="icon icon-switch"></i> Cerrar sesión</a>
-	</div>	
+<body>
+	<?php include('./shared/menu.php'); ?>	
 	<div data-options="region:'center'">
 		<div style="width:800px;height: 400px;text-align:center;background-color: #E45C5C;border-radius:10px;margin:0 auto;margin-top:120px;">
 			<img src="content/stop.png" style="width:200px;height: 200px;margin-top: -80px;margin-bottom: -15px;">

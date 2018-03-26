@@ -21,7 +21,7 @@
 	<script type="text/javascript" src="scripts/locale/easyui-lang-es.js"></script>
 	<script type="text/javascript" src="scripts/views/factura.js"></script>
 </head>
-<body class="easyui-layout">
+<body>
 
 	<?php include('./shared/menu.php'); ?>
 

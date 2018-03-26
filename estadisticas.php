@@ -65,40 +65,30 @@
 	}
 	</style>
 </head>
-<body class="easyui-layout">
-	<div data-options="region:'north'" style="height:50px;color:white; background-color:#2D3E50;padding:15px;text-align:right;font-size:15px;">	
-		<a href="index.php" style="color:white;margin:0px 15px; 0px 15px;"><i class="icon icon-home"></i> Inicio</a>
-		| <a href="cliente.php" style="color:white;margin:0px 15px; 0px 15px;"><i class="icon icon-users"></i> Clientes</a>
-		| <a href="factura.php" style="color:white;margin:0px 15px; 0px 15px;"><i class="icon icon-printer"></i> Facturas</a>
-		| <a href="proveedor.php" style="color:white;margin:0px 15px; 0px 15px;"><i class="icon icon-earth"></i> Proveedores</a>
-		| <a href="proveedor.php" style="color:white;margin:0px 15px; 0px 15px;"><i class="icon icon-pie-chart"></i> Estadisticas</a>
-		| <a href="cerrarsesion.php" style="color:white;margin:0px 15px; 0px 15px;"><i class="icon icon-switch"></i> Cerrar sesión</a>
-	</div>	
-	<div data-options="region:'center'">
-		<div style="margin: 50px 0px 50px 50px;">
-			<h1 style="color: #2C3E50">Reporte De Ventas</h1>
+<body>
+	<?php include('./shared/menu.php'); ?>
+
+	<div id="p" class="easyui-panel" title="Reporte De Ventas" style="width:auto ;height:auto;padding:10px;">
+			
 			<label>Fecha Inicio: (yyyy-mm-dd)</label>
 				<div>					
-					<input id="fechinicio" name="fechinicio"  class="easyui-datebox"  data-options="parser: parserDate, formatter: formatterDate" style="width:20%" />
+					<input id="fechinicio" name="fechinicio"  class="easyui-datebox"  data-options="parser: parserDate, formatter: formatterDate"/>
 					<br>
 				</div>	
 
 
-			<div style="margin: -39px 0px 0px 400px;">
+			<div style="margin: -39px 0px 0px 200px;">
 				<label>Fecha Final: (yyyy-mm-dd)</label>
 					<div>		
-						<input id="fechfinal" name="final"  class="easyui-datebox" data-options="parser: parserDate, formatter: formatterDate" style="width:28%" />
+						<input id="fechfinal" name="final"  class="easyui-datebox" data-options="parser: parserDate, formatter: formatterDate" />
 					</div><br />
 			</div>		
 			<a href="#" class="easyui-linkbutton" id="showresult" style="background: #2C3E50;color: white;">&#128202; Graficar</a>     
-			<a href="#" class="easyui-linkbutton" id="pdf" style="background: #2C3E50;color: white;">&#128193; Generar Reporte</a>     
-		</div>	
-
-		<div style="width: 60%;position: relative;left: 50px">
+			<a href="#" class="easyui-linkbutton" id="pdf" style="background: #2C3E50;color: white;">&#128193; Generar Reporte</a>  
+			<div style="width: 60%;position: relative;left: 50px; padding-top: 20px;">
 			<canvas id="grafico"></canvas>
 		</div>
-				
-	</div>	
+    </div>
 
 	<div data-options="region:'south'" style="height:20px; text-align:left; padding:1px">
 		<b>Software creado por: Juan David Morales A.</b>

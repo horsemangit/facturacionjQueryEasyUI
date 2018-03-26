@@ -1,3 +1,9 @@
+<?php
+	session_start();	
+	if(!isset($_SESSION['user'])){
+		echo '<script> window.location="loginsistema.php"; </script>';
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +18,7 @@
 	<script type="text/javascript" src="scripts/locale/easyui-lang-es.js"></script>
 	<script type="text/javascript" src="scripts/views/documento.js"></script>
 </head>
-<body class="easyui-layout">
+<body>
 	 
 	<?php include('./shared/menu.php'); ?>
 

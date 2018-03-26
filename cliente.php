@@ -22,7 +22,8 @@
 	<script type="text/javascript" src="scripts/views/cliente.js"></script>
 	<script type="text/javascript" src="scripts/date.js"></script>
 </head>
-<body class="easyui-layout">
+<body>
+<!-- class="easyui-layout" -->	
 	 
 	<?php include('./shared/menu.php'); ?>
 

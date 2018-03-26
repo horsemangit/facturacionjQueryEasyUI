@@ -22,7 +22,7 @@
 	<script type="text/javascript" src="scripts/views/proveedor.js"></script>
 	<script type="text/javascript" src="scripts/date.js"></script>
 </head>
-<body class="easyui-layout">
+<body>
 	
 	<?php include('./shared/menu.php'); ?>	
 
