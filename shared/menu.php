@@ -18,6 +18,6 @@
         <div><a href="categoria.php" data-options="plain:true"><i class="icon icon-pushpin"></i> Categorias</div>
         <div><a href="documento.php" data-options="plain:true"><i class="icon icon-profile"></i> Documentos</div>
         <div><a href="estadisticas.php" data-options="plain:true"><i class="icon icon-pie-chart"></i> Estadisticas</a></div>     
-        <div><a href="cerrarsesion.php" data-options="plain:true"><i class="icon icon-switch"></i> Cerrar sesión</a></div>
+        <div><a data-options="plain:true" onclick="confirm1();"><i class="icon icon-switch"></i> Cerrar sesión</a></div>
     </div>
  

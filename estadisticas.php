@@ -20,6 +20,7 @@
 	<script type="text/javascript" src="scripts/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="scripts/locale/easyui-lang-es.js"></script>
 	<script type="text/javascript" src="scripts/chartJS/Chart.min.js"></script>
+	<script type="text/javascript" src="scripts/views/logout.js"></script>
 	<script type="text/javascript" src="scripts/views/estadisticas.js"></script>
 	<script type="text/javascript" src="scripts/date.js"></script>
 	<style type="text/css">

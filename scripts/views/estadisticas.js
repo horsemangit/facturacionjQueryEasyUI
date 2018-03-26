@@ -63,11 +63,11 @@ $(document).ready(function(){
 
 		if(fechinicio > fechfinal)
 		{
-			 $.messager.alert('Error','La fecha de inicio no puede ser mayor a la fecha final!','error');
+			$.messager.alert('Error','La fecha de inicio no puede ser mayor a la fecha final!','error');
 		}
 		else if(fechinicio == "" && fechfinal == "")
 		{
-			 $.messager.alert('Error','No puedes dejar los campos vacios!','error');
+			$.messager.alert('Error','No puedes dejar los campos vacios!','error');
 		}
 		else
 		{		

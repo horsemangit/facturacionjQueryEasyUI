@@ -12,7 +12,7 @@
 	$row = mysqli_fetch_row($rs);
 	$result["total"] = $row[0];
 		
-	$rs = ejecutar("SELECT 
+	$rs = ejecutar($cnx, "SELECT 
 		cliente.idcliente
 	    , cliente.codigo
 	    , cliente.idtipodoc
@@ -32,7 +32,7 @@
 	 FROM cliente INNER JOIN tipodocumento ON cliente.idtipodoc = tipodocumento.idtipodoc
 		INNER JOIN ciudad ON cliente.idciudad = ciudad.idciudad
 		INNER JOIN departamento ON ciudad.iddepartamento = departamento.iddepartamento
-	     	     limit $offset,$rows",$cnx);	
+	     	     limit $offset,$rows");	
 	$items = array();
 	while($row = mysqli_fetch_object($rs)){
 		array_push($items, $row);
