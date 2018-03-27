@@ -9,21 +9,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Categorias ~ INVENTASYSTEM</title>
-	<link rel="stylesheet" type="text/css" href="content/themes/bootstrap/easyui.css">
-	<link rel="stylesheet" type="text/css" href="content/themes/icon.css">
-	<link rel="stylesheet" type="text/css" href="content/themes/color.css">
-	<link rel="stylesheet" type="text/css" href="content/site.css">
-	<script type="text/javascript" src="scripts/jquery.min.js"></script>
-	<script type="text/javascript" src="scripts/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="scripts/locale/easyui-lang-es.js"></script>
-	<script type="text/javascript" src="scripts/views/logout.js"></script>
-	<script type="text/javascript" src="scripts/views/categoria.js"></script>
+	<?php include('./shared/linksPage/links.php'); ?>
 </head>
 <body>
 	
 	<?php include('./shared/menu.php'); ?>
 
-	<div data-options="region:'center'">		
+	<div data-options="region:'center'" class="rcenter">		
 		
 		<table id="dg" title="Categorias" class="easyui-datagrid" data-options="fit:true"
 				url="api/categoria_obtener_paginado.php"
@@ -46,7 +38,7 @@
 			<form id="fm" method="post" novalidate>
 				<label>Nombre de la categoria:</label>
 				<div>					
-					<input name="nomcategoria" class="easyui-textbox" required="true" style="width:100%">
+					<input name="nomcategoria" class="easyui-textbox" required="true" style="width: 100%;">
 				</div>				
 			</form>
 		</div>
@@ -58,8 +50,8 @@
 	</div>	
 	
 
-	<div data-options="region:'south'" style="height:20px; text-align:left; padding:1px">
-		<b>Software creado por: Juan David Morales A.</b>
-	</div>
+	<?php include('./shared/footer.php'); ?>
+	<?php include('./shared/scriptsPage/scripts.php'); ?>
+	<script type="text/javascript" src="scripts/views/categoria.js"></script>
 </body>
 </html>

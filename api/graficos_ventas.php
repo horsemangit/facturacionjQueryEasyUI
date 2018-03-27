@@ -16,7 +16,7 @@
 			WHERE
 				factura.fechfactura BETWEEN '".$fechainicial."' AND '".$fechafinal."'
 			GROUP BY 
-				factura.fechfactura";
+				detallefactura.idfactura";
 	$rs = ejecutar($cnx,$sql);
 
 	$items = array();
@@ -26,11 +26,4 @@
 	echo json_encode($items);
 
 	cerrar($cnx);
-	 
-
-
-
-
-
-
 ?>

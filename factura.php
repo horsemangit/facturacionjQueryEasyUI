@@ -9,24 +9,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Factura ~ INVENTASYSTEM</title>
-	<link rel="stylesheet" type="text/css" href="content/themes/bootstrap/easyui.css">
-	<link rel="stylesheet" type="text/css" href="content/themes/icon.css">
-	<link rel="stylesheet" type="text/css" href="content/themes/color.css">
-	<link rel="stylesheet" type="text/css" href="content/site.css">
-	<!--ICONOS PARA EL MENU-->
-	<link rel="stylesheet" type="text/css" href="content/iconmenu.css">
-	<!--FIN-->
-	<script type="text/javascript" src="scripts/jquery.min.js"></script>
-	<script type="text/javascript" src="scripts/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="scripts/locale/easyui-lang-es.js"></script>
-	<script type="text/javascript" src="scripts/views/logout.js"></script>
-	<script type="text/javascript" src="scripts/views/factura.js"></script>
+	<?php include('./shared/linksPage/links.php'); ?>
 </head>
 <body>
 
 	<?php include('./shared/menu.php'); ?>
 
-	<div data-options="region:'center'">		
+	<div data-options="region:'center'" class="rcenter">		
 		
 		<table id="dg" title="Facturas de venta" class="easyui-datagrid" data-options="fit:true"
 				url="api/factura_obtener_paginado.php"
@@ -55,23 +44,23 @@
 				<input type="hidden" id="idfactura" name="idfactura">
 				<label>Número de factura:</label>
 				<div>					
-					<input name="numfactura" class="easyui-textbox" data-options="disabled:true" style="width:100%">
+					<input name="numfactura" class="easyui-textbox" data-options="disabled:true" style="width: 100%;">
 				</div>				
 				<label>Fecha de la factura:</label>
 				<div>
-					<input name="fechfactura" class="easyui-textbox" data-options="disabled:true" style="width:100%">					
+					<input name="fechfactura" class="easyui-textbox" data-options="disabled:true" style="width: 100%;">					
 				</div>
 				<label>Cliente:</label>
 				<div>
-					<input name="idclie" class="easyui-combobox" data-options="url:'api/cliente_obtener.php', editable:false, required:'true', valueField:'idcliente', textField:'nomcompleto'" style="width:100%">					
+					<input name="idclie" class="easyui-combobox" data-options="url:'api/cliente_obtener.php', editable:false, required:'true', valueField:'idcliente', textField:'nomcompleto'" style="width: 100%;">					
 				</div>
 				<label>Forma de pago:</label>
 				<div>
-					<input name="idformapago" class="easyui-combobox" data-options="url:'api/formapago_obtener.php', editable:false, required:'true', valueField:'idformapago', textField:'descripcion'" style="width:100%">					
+					<input name="idformapago" class="easyui-combobox" data-options="url:'api/formapago_obtener.php', editable:false, required:'true', valueField:'idformapago', textField:'descripcion'" style="width: 100%;">					
 				</div>
 				<label>Vendedor:</label>
 				<div>
-					<input name="vendedor" class="easyui-textbox" required="true" style="width:100%">					
+					<input name="vendedor" class="easyui-textbox" required="true" style="width: 100%;">					
 				</div>				
 			</form>
 			<div id="dlg-buttons">
@@ -105,15 +94,15 @@
 			<form id="fmd" method="post" novalidate><br/>
 				<label>Producto:</label>
 				<div>				
-					<input id="idarticulo" name="idarticulo" class="easyui-combobox" data-options="url:'api/articulo_obtener.php', onSelect:seleccionararticulo, editable:false, required:'true', valueField:'idarticulo', textField:'nomarti'" style="width:100%">
+					<input id="idarticulo" name="idarticulo" class="easyui-combobox" data-options="url:'api/articulo_obtener.php', onSelect:seleccionararticulo, editable:false, required:'true', valueField:'idarticulo', textField:'nomarti'" style="width: 100%;">
 				</div>
 				<label>Cantidad:</label>
 				<div>				
-					<input name="cantarti" class="easyui-numberbox" data-options="required:'true', min:1, precision:0, value:1" style="width:100%">
+					<input name="cantarti" class="easyui-numberbox" data-options="required:'true', min:1, precision:0, value:1" style="width: 100%;">
 				</div>				
 				<label>Valor unitario:</label>
 				<div>				
-					<input id="valorunidad" name="valorunidad" class="easyui-textbox" data-options="readonly:true" style="width:100%">
+					<input id="valorunidad" name="valorunidad" class="easyui-textbox" data-options="readonly:true" style="width: 100%;">
 				</div>				
 
 			</form>
@@ -125,8 +114,8 @@
 	</div>	
 	
 
-	<div data-options="region:'south'" style="height:20px; text-align:left; padding:1px">
-		<b>Software creado por: Juan David Morales A.</b>
-	</div>
+	<?php include('./shared/footer.php'); ?>
+	<?php include('./shared/scriptsPage/scripts.php'); ?>
+	<script type="text/javascript" src="scripts/views/factura.js"></script>
 </body>
 </html>

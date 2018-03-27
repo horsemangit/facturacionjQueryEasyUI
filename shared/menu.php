@@ -2,7 +2,7 @@
 
 
 <div style="margin:20px 0;"></div>
-    <div class="easyui-panel" style="padding:5px; text-align: right; width: 100%;">
+    <div class="easyui-panel menu-principal">
         <a href="index.php" class="easyui-linkbutton" data-options="plain:true"><i class="icon icon-home"></i> Inicio</a>
         <a href="cliente.php" class="easyui-linkbutton" data-options="plain:true"><i class="icon icon-users"></i> Clientes</a>
         <a href="factura.php" class="easyui-linkbutton" data-options="plain:true"><i class="icon icon-printer"></i> Facturas</a>

@@ -9,26 +9,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Clientes ~ INVENTASYSTEM</title>
-	<link rel="stylesheet" type="text/css" href="content/themes/Default/easyui.css">
-	<link rel="stylesheet" type="text/css" href="content/themes/icon.css">
-	<link rel="stylesheet" type="text/css" href="content/themes/color.css">
-	<link rel="stylesheet" type="text/css" href="content/site.css">
-	<!--ICONOS PARA EL MENU-->
-	<link rel="stylesheet" type="text/css" href="content/iconmenu.css">
-	<!--FIN-->
-	<script type="text/javascript" src="scripts/jquery.min.js"></script>
-	<script type="text/javascript" src="scripts/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="scripts/locale/easyui-lang-es.js"></script>
-	<script type="text/javascript" src="scripts/views/logout.js"></script>
-	<script type="text/javascript" src="scripts/views/cliente.js"></script>
-	<script type="text/javascript" src="scripts/date.js"></script>
+	<?php include('./shared/linksPage/links.php'); ?>
 </head>
 <body>
 <!-- class="easyui-layout" -->	
 	 
 	<?php include('./shared/menu.php'); ?>
 
-	<div data-options="region:'center'">		
+	<div data-options="region:'center'" class="rcenter">		
 		
 		<table id="dg" title="Clientes" class="easyui-datagrid" data-options="fit:true"
 				url="api/cliente_obtener_paginado.php"
@@ -62,62 +50,62 @@
 
 				<label>Numero De Identificación:</label>
 					<div>					
-						<input name="codigo" class="easyui-textbox" required="true" style="width:100%">
+						<input name="codigo" class="easyui-textbox" required="true" style="width: 100%;">
 					</div><br />
 
 				<label>Tipo De Documento:</label>
 					<div>					
-						<input name="idtipodoc" class="easyui-combobox" data-options="url:'api/documento_obtener.php', editable:false, required:'true', valueField:'idtipodoc', textField:'desctipodoc'" style="width:100%">
+						<input name="idtipodoc" class="easyui-combobox" data-options="url:'api/documento_obtener.php', editable:false, required:'true', valueField:'idtipodoc', textField:'desctipodoc'" style="width: 100%;">
 					</div><br />	
 
 				<label>Nombre Del Cliente:</label>
 					<div>					
-						<input name="nomclie" class="easyui-textbox" required="true" style="width:100%">
+						<input name="nomclie" class="easyui-textbox" required="true" style="width: 100%;">
 					</div><br />
 
 				<label>Apellido Del Cliente:</label>
 					<div>					
-						<input name="apeclie" class="easyui-textbox" required="true" style="width:100%">
+						<input name="apeclie" class="easyui-textbox" required="true" style="width: 100%;">
 					</div><br />
 
 				<label>Dirección:</label>
 					<div>					
-						<input name="dirclie" class="easyui-textbox" required="true" style="width:100%">
+						<input name="dirclie" class="easyui-textbox" required="true" style="width: 100%;">
 					</div><br />
 
 				<label>Telefono:</label>
 					<div>					
-						<input name="telclie" class="easyui-textbox" required="true" style="width:100%">
+						<input name="telclie" class="easyui-textbox" required="true" style="width: 100%;">
 					</div><br />
 
 				<label>Email:</label>
 					<div>					
-						<input name="email" class="easyui-textbox" style="width:100%">
+						<input name="email" class="easyui-textbox" style="width: 100%;">
 					</div><br />
 
 				<label>Fecha De Nacimiento:</label>
 					<div>	
-						<input name="fechnaci" type="text" class="easyui-datebox" data-options="parser: parserDate, formatter: formatterDate" />
+						<input name="fechnaci" type="text" class="easyui-datebox" data-options="parser: parserDate, formatter: formatterDate" style="width: 100%;"/>
    					</div><br />	
 
 				<label>Fecha De Registro:</label>
 					<div>					
-						<input name="fechregi" class="easyui-textbox" data-options="disabled:true" style="width:100%">
+						<input name="fechregi" class="easyui-textbox" data-options="disabled:true" style="width: 100%;">
 					</div><br />
 					
 				<label>Barrio:</label>
 					<div>		
-						<input name="nombarrio" class="easyui-textbox" required="true" style="width:100%">		
+						<input name="nombarrio" class="easyui-textbox" required="true" style="width: 100%;">		
 					</div><br />
 
 				<label>Departamento:</label>
 					<div>					
-						<input id="iddepartamento" name="iddepartamento" class="easyui-combobox" data-options="url:'api/departamento_obtener.php', editable:false, required:'true', valueField:'iddepartamento', textField:'nomdepar', onChange: actualizarCiudades" style="width:100%">
+						<input id="iddepartamento" name="iddepartamento" class="easyui-combobox" data-options="url:'api/departamento_obtener.php', editable:false, required:'true', valueField:'iddepartamento', textField:'nomdepar', onChange: actualizarCiudades" style="width: 100%;">
 					</div><br />
 
 				<label>Ciudad:</label>
 					<div>					
-						<input id="idciudad" name="idciudad" class="easyui-combobox" data-options="editable:false, required:'true', valueField:'idciudad', textField:'nomciu'" style="width:100%">
+						<input id="idciudad" name="idciudad" class="easyui-combobox" data-options="editable:false, required:'true', valueField:'idciudad', textField:'nomciu'" style="width: 100%;">
 					</div><br />	
 
 									
@@ -131,8 +119,9 @@
 	</div>	
 	
 
-	<div data-options="region:'south'" style="height:20px; text-align:left; padding:1px">
-		<b>Software creado por: Juan David Morales A.</b>
-	</div>
+	<?php include('./shared/footer.php'); ?>
+	<?php include('./shared/scriptsPage/scripts.php'); ?>	
+	<script type="text/javascript" src="scripts/views/cliente.js"></script>
+	<script type="text/javascript" src="scripts/date.js"></script>
 </body>
 </html>
