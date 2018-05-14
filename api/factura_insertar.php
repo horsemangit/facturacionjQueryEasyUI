@@ -11,7 +11,7 @@
 	$result = ejecutar($cnx,$sql);
 	if ($result):
 		$idfactura = mysqli_insert_id($cnx);
-		$sql2 = "select * from factura where idfactura = $idfactura"
+		$sql2 = "select * from factura where idfactura = $idfactura";
 		$rs = ejecutar($cnx,$sql2);	
 		$items = array();
 		while($row = mysqli_fetch_object($rs)){
